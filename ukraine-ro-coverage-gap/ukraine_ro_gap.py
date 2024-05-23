@@ -342,9 +342,6 @@ def yield_by_mission( analysisfile, monthrange=("2023-01","2023-12"),
         f.write( f"  {all_yield:7.5f}   {all_uncertainty:7.5f}\n" )
 
 
-################################################################################
-
-
 def compute_sounding_density( monthrange=("2023-01","2023-12"), outputfile="sounding_density.nc" ): 
     """Compute an RO sounding density map in the vicinity of Ukraine 
     over a time period defined by monthrange. Output is saved to the 
