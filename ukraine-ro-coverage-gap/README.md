@@ -22,7 +22,7 @@ conda env create -f config.yaml
 
 at the Linux command line. If you haven't previously implemented the 
 **awsgnssroutils** Python package and set its defaults, be sure to 
-change the "False" to a "True" in line 530 of **ukraine_ro_gap.py** 
+change the "False" to a "True" in line 527 of **ukraine_ro_gap.py** 
 and change the paths that follow according to user wishes. 
 
 ## Analysis and Figure Generation
