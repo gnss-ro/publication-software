@@ -1,4 +1,4 @@
-from awsgnssroutils.database import RODatabaseClient, setdefaults
+from awsgnssroutils.database import RODatabaseClient, setdefaults, populate
 
 import numpy as np
 import xarray as xr
@@ -14,6 +14,19 @@ import os
 from datetime import datetime, timedelta
 from time import time
 
+
+#  Set awsgnssroutils defaults if necessary. 
+
+if False: 
+    HOME = os.path.expanduser( "~" )
+    metadata_root = os.path.join( HOME, "Data", "awsro", "metadata" )
+    data_root = os.path.join( HOME, "Data", "awsro", "data" )
+    setdefaults( metadata_root=metadata_root, data_root=data_root, version="v1.1" )
+    populate()
+
+#  RO database portal. 
+
+db = RODatabaseClient()
 
 #  Pyplot settings. 
 
@@ -32,11 +45,6 @@ plt.rcParams.update( {
 #  Physical constants. 
 
 Re = 6378.0e3           # Equatorial radius of the Earth
-
-#  RO database portal. 
-
-db = RODatabaseClient()
-
 
 
 def compute_ukraine_counts( monthrange=("2020-01","2024-04"), analysisfile="ukraine_counts.json" ): 
@@ -521,14 +529,6 @@ def plot_sounding_density( analysisfile, output ):
 
 
 if __name__ == "__main__": 
-
-    #  Set awsgnssroutils defaults if necessary. 
-
-    if False: 
-        HOME = os.path.expanduser( "~" )
-        metadata_root = os.path.join( HOME, "Data", "awsro", "metadata" )
-        data_root = os.path.join( HOME, "Data", "awsro", "data" )
-        setdefaults( metadata_root=metadata_root, data_root=data_root )
 
     #  Sounding density analysis/figure. 
 
