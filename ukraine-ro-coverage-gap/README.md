@@ -20,10 +20,29 @@ installation. Create a working environment using the **config.yaml**:
 conda env create -f config.yaml
 ```
 
-at the Linux command line. If you haven't previously implemented the 
+at the Linux command line. Once you have created the environment 
+"ro-distributions", you will have to initialize the PATH environment 
+variable for your shell. If you are using a shell other than bash, you 
+will have to enter the following command on the Linux command line: 
+
+```
+conda init $shell
+```
+
+After you have done this, no matter what shell you are using, you 
+will have to close the shell and start a new one. 
+
+If you haven't previously implemented the 
 **awsgnssroutils** Python package and set its defaults, be sure to 
-change the "False" to a "True" in line 527 of **ukraine_ro_gap.py** 
-and change the paths that follow according to user wishes. 
+change the "False" to a "True" in line 20 of **ukraine_ro_gap.py** 
+and change the paths that follow according to user wishes. This will 
+initialize the access to RO data in the AWS Registry of Open Data and 
+pre-populate all RO metadata. You will only need to run this section of 
+the code once, so be sure you set the "True" to "False" on line 20 after 
+first use. 
+
+Finally, to take advantage of LaTeX fonts, be sure to install a 
+distribution of TeX/LaTeX on your operating system. 
 
 ## Analysis and Figure Generation
 
